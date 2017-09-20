@@ -1,0 +1,25 @@
+{
+  "name": "iris-time",
+  "version": "1.0.0",
+  "description": "Time microservice for iris slackbot",
+  "main": "server/service.js",
+  "bin": {
+    "iris-time": "run.js"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nikhilgarg459/iris-time.git"
+  },
+  "author": "Nikhil Garg",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nikhilgarg459/iris-time/issues"
+  },
+  "homepage": "https://github.com/nikhilgarg459/iris-time#readme",
+  "dependencies": {
+    "express": "^4.15.4"
+  }
+}
