@@ -23,11 +23,13 @@
   "dependencies": {
     "dotenv": "^4.0.0",
     "express": "^4.15.4",
-    "mocha": "^3.5.3",
     "moment": "^2.18.1",
+    "superagent": "^3.6.0"
+  },
+  "devDependencies": {
+    "mocha": "^3.5.3",
     "nyc": "^11.2.1",
     "should": "^13.1.0",
-    "superagent": "^3.6.0",
     "supertest": "^3.0.0"
   }
 }
