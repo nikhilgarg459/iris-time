@@ -7,7 +7,7 @@
     "iris-time": "run.js"
   },
   "scripts": {
-    "test": "nyc mocha --recursive test",
+    "test": "NODE_ENV=test eslint bin server && nyc mocha --recursive test",
     "start": "node bin/run"
   },
   "repository": {
@@ -21,6 +21,7 @@
   },
   "homepage": "https://github.com/nikhilgarg459/iris-time#readme",
   "dependencies": {
+    "bunyan": "^1.8.12",
     "dotenv": "^4.0.0",
     "express": "^4.15.4",
     "moment": "^2.18.1",
