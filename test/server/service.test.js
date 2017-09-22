@@ -19,6 +19,7 @@ describe('GET /service/:location', () => {
     it('should return HTTP 200 and a reply with a valid result', (done) => {
         request(service)
             .get('/service/India')
+            .set('X-IRIS-SERVICE-TOKEN', config.serviceAccessToken)
             .expect(200)
             .end((err, res) => {
                 if (err)
@@ -27,4 +28,12 @@ describe('GET /service/:location', () => {
                 return done();
             });
     });
+
+    it('should return HTTP 403 if no valid token was passed', (done) => {
+        request(service)
+            .get('/service/India')
+            .set('X-IRIS-SERVICE-TOKEN', 'wrongToken')
+            .expect(403)
+            .end(done);
+    });    
 });
