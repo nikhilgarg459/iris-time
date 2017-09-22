@@ -7,7 +7,11 @@
     "iris-time": "run.js"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "NODE_ENV=test eslint bin server && nyc mocha --recursive test",
+    "start": "node bin/run"
+  },
+  "engines": {
+    "node": "6.10.2"
   },
   "repository": {
     "type": "git",
@@ -20,8 +24,16 @@
   },
   "homepage": "https://github.com/nikhilgarg459/iris-time#readme",
   "dependencies": {
+    "bunyan": "^1.8.12",
+    "dotenv": "^4.0.0",
     "express": "^4.15.4",
     "moment": "^2.18.1",
     "superagent": "^3.6.0"
+  },
+  "devDependencies": {
+    "mocha": "^3.5.3",
+    "nyc": "^11.2.1",
+    "should": "^13.1.0",
+    "supertest": "^3.0.0"
   }
 }

@@ -1,5 +1,4 @@
-mapApi.txt
-const.js
+.env
 # Logs
 logs
 *.log

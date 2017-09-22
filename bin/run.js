@@ -1,7 +1,9 @@
 'use strict';
 
+const config = require('../config');
+const log = config.log();
 const request = require('superagent');
-const service = require('../server/service');
+const service = require('../server/service')(config);
 const http = require('http');
 
 const server = http.createServer(service);
@@ -9,18 +11,18 @@ const server = http.createServer(service);
 server.listen();
 
 server.on('listening', function(){
-    console.log(`IRIS-Time is listenong on ${server.address().port} in ${service.get('env')} mode`);
+    log.info(`IRIS-Time is listenong on ${server.address().port} in ${service.get('env')} mode`);
     
     const announce = () => {
         request.put(`http://127.0.0.1:3001/service/time/${server.address().port}`, (err, res)=>{
             if(err){
-                console.log(err);
-                console.log('There was an error connecting to Iris');
+                log.debug(err);
+                log.info('There was an error connecting to Iris');
                 return;
             }
-            console.log(res.body);
+            log.info(res.body);
         });
-    }
+    };
 
     announce();
 
